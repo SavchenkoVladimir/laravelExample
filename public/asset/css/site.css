@@ -22,3 +22,42 @@ body
     color: rgb(80, 80, 80);  
     font-family: Arial, Cambria;
 }
+header
+{
+  border: 0;
+  /*width: 100%;*/
+  padding: 0;
+  position: relative;
+  margin-top: 60px;
+  background-color: rgba(170, 170, 170, 0.5);
+  height: 65px;  
+}
+  ul{
+/*    overflow: auto;
+    height: 100%;*/
+    margin: 0;
+    padding: 0;
+  }
+    li
+    {
+      list-style: none;
+      list-style-type: none;
+    }
+      a.nav
+      {
+        text-decoration: none;
+        width: 100%;
+        height: 65px;
+        display: inline-block;
+        font-weight: bolder;
+        font-size: 2em;
+        color: rgb(54, 54, 54);        
+        padding: 15px 0 0 0;
+        text-align: center;
+      }
+        a.nav:hover
+        {        
+          background-color: rgba(170, 170, 170, 0.2);
+          color: rgb(255,102,0);
+          text-decoration: none;
+        }
