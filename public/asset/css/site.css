@@ -1,0 +1,24 @@
+/* 
+    This is the style of Portfolio project
+    Created on : Aug 7, 2016, 6:07:38 PM
+    Author     : Vladimir Savchenko
+*/
+
+
+@font-face{
+    font-family: ArbatDi;
+    src: url('../css/ArbatDi.ttf');
+}
+
+/*  The site layout style  */
+body
+{
+    display: none; 
+    width: 100%;
+    margin: auto;
+    margin: 0;
+    padding: 0;
+    overflow: auto;
+    color: rgb(80, 80, 80);  
+    font-family: Arial, Cambria;
+}
