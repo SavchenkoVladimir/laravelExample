@@ -45,14 +45,22 @@ use Collective\Html\HtmlFacade;
                     @yield('content')
                 </div>
                 <footer class="row">
-                    <div class="col-xs-1 col-sm-2 col-md-2 col-lg-2"></div>
-                    <div class="col-xs- col-sm-4 col-md-3 col-lg-4">
+                    <div class="col-xs-1 col-sm-1 col-md-2 col-lg-2"></div>
+                    <div class="col-xs-5 col-sm-4 col-md-3 col-lg-4">
                         <div class="copyright">&copy; Vladimir Savchenko</div>
                         <div class="beginYear">2015</div>
                         <div class="currentYear"></div>
                     </div>
-                    <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3"></div>
-                    <div class="share col-xs-6 col-sm-4 col-md-3 col-lg-3"></div>
+                    <div class="col-xs-1 col-sm-3 col-md-3 col-lg-3"></div>
+                    <div class="col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <a href="https://www.linkedin.com/shareArticle?url=http://savchenkoportfolio.com&mini=true"
+                           id="linkedin"><i class="fa fa-linkedin fa-2x share" aria-hidden="true"></i></a>
+                        <a href="http://www.facebook.com/sharer.php?s=link" id="facebook">
+                            <i class="fa fa-facebook fa-2x share" aria-hidden="true"></i></a>
+                        <a href="http://vkontakte.ru/share.php?url=link" id="vk">
+                            <i class="fa fa-vk fa-2x share" aria-hidden="true"></i>
+                        </a>                        
+                    </div>     
                     <div></div>
                 </footer>
             </div>
