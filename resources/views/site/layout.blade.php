@@ -12,7 +12,7 @@
               I am a front-end developer. On the site you can find my front-end work exemples." />
         <meta name="keywords" content="front-end, work exemples, portfodivo" />
         <link href="{!! asset('asset/css/site.css') !!}" media="all" rel="stylesheet" type="text/css" />
-        <link href="{!! asset('asset/css/bootstrap.css') !!}" media="all" rel="stylesheet" type="text/css" />        
+        <link href="{!! asset('asset/bootstrap-3.3.7-dist/css/bootstrap.min.css') !!}" media="all" rel="stylesheet" type="text/css" />        
         <link href="{!! asset('asset/font-awesome-4.6.3/css/font-awesome.min.css') !!}" media="all" 
               rel="stylesheet" type="text/css" />         
         <link rel="icon" type="image/png" href="{!! asset('asset/img/site/favicon.png') !!}" />
@@ -31,14 +31,15 @@
                 </button>
                 <div class="collapse navbar-collapse" id="responsiv-header">
                     <ul class="row">
-                        <li class="hidden-xs col-sm-3 col-md-5 col-lg-5">
+                        <li class="hidden-xs col-sm-1 col-md-4 col-lg-4">
                         </li>
                         <li class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
                             {!! Html::link($pageParameters['link'][0]['route'],
                             $pageParameters['link'][0]['html'], [ 'class' => 'nav'], null)!!} 
                         </li>                        
-                        <li class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-                            <a class='nav'>Summury</a>
+                        <li class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                            {!! Html::link($pageParameters['link'][1]['route'],
+                            $pageParameters['link'][1]['html'], [ 'class' => 'nav'], null)!!}  
                         </li>
                         <li class="col-xs-12 col-sm-3 col-md-2 col-lg-2" id="li_contacts_link">
                             <a class='nav'>Contacts</a>
@@ -74,7 +75,7 @@
     </div>
     <div class='scripts'>
         <script src="{{asset('asset/js/site.js')}}"></script>           
-        <script src="{{asset('asset/js/bootstrap.min.js')}}"></script>
+        <script src="{{asset('asset/bootstrap-3.3.7-dist/js/bootstrap.min.js')}}"></script>
     </div>        
 </body>
 </html>

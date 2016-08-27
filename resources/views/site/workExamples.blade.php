@@ -11,13 +11,14 @@
         <div class="we_examples_descr col-xs-12 col-sm-6 col-md-8 col-lg-8">
             <h3><a href="{!! url('meetAStar') !!}" class="we">{!! $workExample['name'] !!}</a></h3>
             <p class="we_progect_description">{!! $workExample['text_description'] !!}</p>
-            <i class="fa fa-star-o" aria-hidden="true"></i>
-<span class="glyphicon glyphicon-star" aria-hidden="true"></span>
         </div>
         <hr class="we" />
     </div>
     <hr/>
     @endforeach   
+</div>
+<div class="scripts">
+    <script src="{{asset('asset/js/workExamples.js')}}"></script>
 </div>
 @endsection
 

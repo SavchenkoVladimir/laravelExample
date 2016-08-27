@@ -17,4 +17,4 @@ Route::get('/home', 'SiteController@showHome');
 
 Route::get('/workExamples', 'SiteController@showWorkExamples');
 
-//Route::get('/home', 'SiteController@showHome');
+Route::get('/summury', 'SiteController@showSummary');

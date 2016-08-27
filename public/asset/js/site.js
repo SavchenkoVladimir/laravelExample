@@ -20,3 +20,12 @@ var move = new MoveingSun('sun');
 /* Describe the references */
 var describe = new DescribeRef('#home_page > .row > div > a', '../../asset/img/site/github.png');
 describe.depict();
+
+/* Glue element bottom if content is not enouth. */
+var glueFooter = new glueElementBottom(130, 65, '#site_content');
+$(window).resize(function () {
+    glueFooter.glue();
+});
+$(window).load(function () {
+    glueFooter.glue();
+});

@@ -14,6 +14,8 @@ class SiteController extends BaseController {
         $pageParameters['page_name'] = 'home';
         $pageParameters['link'][0]['route'] = 'workExamples';
         $pageParameters['link'][0]['html'] = 'Work examples';
+        $pageParameters['link'][1]['route'] = '/summury';
+        $pageParameters['link'][1]['html'] = 'Summury';         
         return view('site.home', ['pageParameters' => $pageParameters]);
     }
 
@@ -21,12 +23,30 @@ class SiteController extends BaseController {
         $pageParameters['page_name'] = 'Work examples';
         $pageParameters['link'][0]['route'] = 'home';
         $pageParameters['link'][0]['html'] = 'Home';
+        $pageParameters['link'][1]['route'] = '/summury';
+        $pageParameters['link'][1]['html'] = 'Summury';          
         $workExamples = WorkExamples::all();
 
         return view('site.workExamples', [
             'pageParameters' => $pageParameters,
             'workExamples' => $workExamples
         ]);
+    }
+
+    public function showSummary() {
+        $pageParameters['page_name'] = 'Home';
+        $pageParameters['link'][0]['route'] = 'home';
+        $pageParameters['link'][0]['html'] = 'Home';      
+        $pageParameters['link'][1]['route'] = 'workExamples';
+        $pageParameters['link'][1]['html'] = 'Work examples';        
+        return view('site.summury', ['pageParameters' => $pageParameters]);
+    }
+
+    public function getHomeLinkParameters() {
+        $pageParameters['page_name'] = 'home';
+        $pageParameters['link'][0]['route'] = 'workExamples';
+        $pageParameters['link'][0]['html'] = 'Work examples';
+        return $pageParameters;
     }
 
 }
