@@ -13,5 +13,8 @@
 
 Route::get('/', 'SiteController@showHome');
 
-//Route::get('/home', 'SiteController@showHome');
+Route::get('/home', 'SiteController@showHome');
 
+Route::get('/workExamples', 'SiteController@showWorkExamples');
+
+//Route::get('/home', 'SiteController@showHome');

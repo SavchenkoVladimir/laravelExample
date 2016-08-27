@@ -26,7 +26,8 @@ body
 #responsiv-header > ul,
 #home_page,
 #home_page > .row,
-#site_layout_footer{
+#site_layout_footer,
+#work_examples > .row{
     width: 100%;
     margin: 0;
     padding: 0;    
@@ -84,6 +85,7 @@ body
     #site_layout_footer{
         background-color: rgba(170, 170, 170, 0.6); 
         height: 65px;
+        font-family: ArbatDi;
     }
         .copyright_container{
             padding: 0 0 0 20px !important;
@@ -105,7 +107,7 @@ body
         
 /*--- The home page style --------------------------------------*/
 #home_page{
-    background-image: url(../../../asset/img/earthWork.jpg);
+    background-image: url(../../asset/img/site/earthWork.jpg);
     background-repeat: no-repeat;
     background-position: top;
     overflow: auto;
@@ -219,3 +221,17 @@ body
           margin-left: 130px;
         }
 
+/* Work examples */
+#work_examples{
+    max-width: 1100px;
+    margin: auto;
+}
+    img.we_examples_img{
+        width: 250px;
+        height: 180px;
+        border-radius: 3px;
+        margin: 5px;
+    }
+    a.we{
+        color: rgba(80, 80, 80, 1); 
+    }

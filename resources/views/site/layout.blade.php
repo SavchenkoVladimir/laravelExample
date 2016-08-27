@@ -15,7 +15,7 @@
         <link href="{!! asset('asset/css/bootstrap.css') !!}" media="all" rel="stylesheet" type="text/css" />        
         <link href="{!! asset('asset/font-awesome-4.6.3/css/font-awesome.min.css') !!}" media="all" 
               rel="stylesheet" type="text/css" />         
-        <link rel="icon" type="image/png" href="{!! asset('asset/img/favicon.png') !!}" />
+        <link rel="icon" type="image/png" href="{!! asset('asset/img/site/favicon.png') !!}" />
         <script src="{{asset('asset/js/jquery-2.1.4.min.js')}}"></script>
         <script src="{{asset('asset/js/classes.js')}}"></script>
         <!--[if lt IE 9]> 
@@ -23,7 +23,7 @@
         <![endif]-->
     </head>
     <body>
-        <div class="row" id="site_layout">
+         <div class="row" id="site_layout">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="layout_header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsiv-header">
                     <i class="fa fa-bars fa-2x" aria-hidden="true"></i>                            
@@ -34,8 +34,8 @@
                         <li class="hidden-xs col-sm-3 col-md-5 col-lg-5">
                         </li>
                         <li class="col-xs-12 col-sm-4 col-md-3 col-lg-3">
-                            {!! Html::link('site/workExamples',
-                            'HTML5', [ 'class' => 'nav'], null)!!} 
+                            {!! Html::link($pageParameters['link'][0]['route'],
+                            $pageParameters['link'][0]['html'], [ 'class' => 'nav'], null)!!} 
                         </li>                        
                         <li class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
                             <a class='nav'>Summury</a>

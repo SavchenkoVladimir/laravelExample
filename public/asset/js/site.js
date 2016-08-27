@@ -18,5 +18,5 @@ gluedHeader.glue();
 var move = new MoveingSun('sun');
 
 /* Describe the references */
-var describe = new DescribeRef('#home_page > .row > div > a', '../../../asset/img/github.png');
+var describe = new DescribeRef('#home_page > .row > div > a', '../../asset/img/site/github.png');
 describe.depict();
