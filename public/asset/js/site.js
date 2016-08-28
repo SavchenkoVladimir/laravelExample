@@ -29,3 +29,11 @@ $(window).resize(function () {
 $(window).load(function () {
     glueFooter.glue();
 });
+
+var e404 = new glueElementBottom(0, 0, 'section.e404');
+$(window).resize(function () {
+    e404.glue();
+});
+$(window).load(function () {
+    e404.glue();
+});
