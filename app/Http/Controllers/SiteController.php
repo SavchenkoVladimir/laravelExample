@@ -10,43 +10,50 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class SiteController extends BaseController {
 
+    public $pageParameters = [];
+    
     public function showHome() {
-        $pageParameters['page_name'] = 'home';
-        $pageParameters['link'][0]['route'] = 'workExamples';
-        $pageParameters['link'][0]['html'] = 'Work examples';
-        $pageParameters['link'][1]['route'] = '/summury';
-        $pageParameters['link'][1]['html'] = 'Summury';         
-        return view('site.home', ['pageParameters' => $pageParameters]);
+        $this->pageParameters['page_name'] = 'home';
+        $this->setWorkExamplesLinkParameters(0); 
+        $this->setSummuryLinkParameters(1);         
+        return view('site.home', ['pageParameters' => $this->pageParameters]);
     }
 
     public function showWorkExamples() {
-        $pageParameters['page_name'] = 'Work examples';
-        $pageParameters['link'][0]['route'] = 'home';
-        $pageParameters['link'][0]['html'] = 'Home';
-        $pageParameters['link'][1]['route'] = '/summury';
-        $pageParameters['link'][1]['html'] = 'Summury';          
+        $this->pageParameters['page_name'] = 'Work examples';
+        $this->setHomeLinkParameters(0);
+        $this->setSummuryLinkParameters(1);
         $workExamples = WorkExamples::all();
 
         return view('site.workExamples', [
-            'pageParameters' => $pageParameters,
+            'pageParameters' => $this->pageParameters,
             'workExamples' => $workExamples
         ]);
     }
 
     public function showSummary() {
-        $pageParameters['page_name'] = 'Home';
-        $pageParameters['link'][0]['route'] = 'home';
-        $pageParameters['link'][0]['html'] = 'Home';      
-        $pageParameters['link'][1]['route'] = 'workExamples';
-        $pageParameters['link'][1]['html'] = 'Work examples';        
-        return view('site.summury', ['pageParameters' => $pageParameters]);
+        $this->pageParameters['page_name'] = 'Home';
+        $this->setHomeLinkParameters(0);
+        $this->setWorkExamplesLinkParameters(1);       
+        return view('site.summury', ['pageParameters' => $this->pageParameters]);
+    }
+    
+    public function contacts(){
+        return view('site.contacts', ['pageParameters' => $this->pageParameters]);
     }
 
-    public function getHomeLinkParameters() {
-        $pageParameters['page_name'] = 'home';
-        $pageParameters['link'][0]['route'] = 'workExamples';
-        $pageParameters['link'][0]['html'] = 'Work examples';
-        return $pageParameters;
+    public function setHomeLinkParameters($linkPosition) {
+        $this->pageParameters['link'][$linkPosition]['route'] = 'home';
+        $this->pageParameters['link'][$linkPosition]['html'] = 'Home';
     }
 
+    public function setWorkExamplesLinkParameters($linkPosition){
+        $this->pageParameters['link'][$linkPosition]['route'] = 'workExamples';
+        $this->pageParameters['link'][$linkPosition]['html'] = 'Work examples';        
+    }
+    
+    public function setSummuryLinkParameters($linkPosition){
+        $this->pageParameters['link'][$linkPosition]['route'] = '/summury';
+        $this->pageParameters['link'][$linkPosition]['html'] = 'Summury';         
+    }
 }

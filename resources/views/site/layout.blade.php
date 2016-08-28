@@ -11,10 +11,10 @@
         <meta name="description" content="The kit of work exemples. My name is Vladimir Savchenko. 
               I am a front-end developer. On the site you can find my front-end work exemples." />
         <meta name="keywords" content="front-end, work exemples, portfodivo" />
-        <link href="{!! asset('asset/css/site.css') !!}" media="all" rel="stylesheet" type="text/css" />
         <link href="{!! asset('asset/bootstrap-3.3.7-dist/css/bootstrap.min.css') !!}" media="all" rel="stylesheet" type="text/css" />        
         <link href="{!! asset('asset/font-awesome-4.6.3/css/font-awesome.min.css') !!}" media="all" 
               rel="stylesheet" type="text/css" />         
+        <link href="{!! asset('asset/css/site.css') !!}" media="all" rel="stylesheet" type="text/css" />        
         <link rel="icon" type="image/png" href="{!! asset('asset/img/site/favicon.png') !!}" />
         <script src="{{asset('asset/js/jquery-2.1.4.min.js')}}"></script>
         <script src="{{asset('asset/js/classes.js')}}"></script>
@@ -23,7 +23,7 @@
         <![endif]-->
     </head>
     <body>
-         <div class="row" id="site_layout">
+        <div class="row" id="site_layout">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="layout_header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsiv-header">
                     <i class="fa fa-bars fa-2x" aria-hidden="true"></i>                            
@@ -42,7 +42,8 @@
                             $pageParameters['link'][1]['html'], [ 'class' => 'nav'], null)!!}  
                         </li>
                         <li class="col-xs-12 col-sm-3 col-md-2 col-lg-2" id="li_contacts_link">
-                            <a class='nav'>Contacts</a>
+                            {!! Html::link('/contacts', 'Contacts', [ 'class' => 'nav close_btn',
+                            'data-toggle' => 'modal', 'data-target' => '#myModal'], null)!!}  
                         </li>
                     </ul>
                 </div>
@@ -71,11 +72,28 @@
                     </a>                  
                 </div>
             </div>
-        </div>            
-    </div>
-    <div class='scripts'>
-        <script src="{{asset('asset/js/site.js')}}"></script>           
-        <script src="{{asset('asset/bootstrap-3.3.7-dist/js/bootstrap.min.js')}}"></script>
-    </div>        
-</body>
+        </div>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">Название модали</h4>
+                    </div>
+                    <div class="modal-body">
+                        ...
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Закрыть</button>
+                        <button type="button" class="btn btn-primary">Сохранить изменения</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class='scripts'>
+            <script src="{{asset('asset/js/site.js')}}"></script>           
+            <script src="{{asset('asset/bootstrap-3.3.7-dist/js/bootstrap.min.js')}}"></script>
+        </div>        
+    </body>
 </html>
