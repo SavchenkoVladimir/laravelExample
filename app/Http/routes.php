@@ -20,3 +20,5 @@ Route::get('/workExamples', 'SiteController@showWorkExamples');
 Route::get('/summury', 'SiteController@showSummary');
 
 Route::get('/contacts', 'SiteController@contacts');
+
+Route::post('/contacts', 'SiteController@contacts');

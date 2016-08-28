@@ -1,3 +1,4 @@
+
 <div id="contactPage">
     <div class="cont btn">
         <button id="close" class="cont" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -33,30 +34,31 @@
                 715114383253!2d36.1403859!3d49.9416866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.
                 1!3m3!1m2!1s0x41279fa19f5df34f%3A0xf675e22ca52b93a0!2z0JrQvtC70L7QvdC90LAg0
                 LLRg9C7LiwgOTIsINCl0LDRgNC60ZbQsiwg0KXQsNGA0LrRltCy0YHRjNC60LAg0L7QsdC70LDRgdGC0Yw
-            !5e0!3m2!1sru!2sua!4v1436986482787'>                    
+                !5e0!3m2!1sru!2sua!4v1436986482787'>                    
         </iframe>
     </div>
     <hr class="contacts" />
     <h4 class="address">You can send me a letter as well:</h4>
     <div id='resp'></div>
+    {!! Form::model($contactsForm, ['url' => '/contacts']) !!}
     <fieldset class="letter">
-        <label>Your name:
-            <input type="text" name="name" class="letter" maxlength="255"/>
+        <label for="name">Your name:
+            {!! Form::text('name', $contactsForm->name, ['class' => 'letter', 'maxlength' => '255']); !!}
         </label>
     </fieldset>
     <fieldset class="letter">
-        <label>Your email:
-            <input type="text" name="email" class="letter" maxlength="255"/>
+        <label>Your email:       
+            {!! Form::email('email', $contactsForm->email, ['class' => 'letter', 'maxlength' => '255']) !!}
         </label>
     </fieldset>
     <fieldset class="letter">
-        <label>Your message:
-            <textarea name="message" class="letter" maxlength="510"></textarea>
+        <label>Your message:    
+            {!! Form::textArea('message', $contactsForm->email, ['class' => 'letter', 'maxlength' => '510']) !!}    
         </label>
     </fieldset>
     <fieldset class="letter">
-        <button name="send" class="letter" disabled>Send</botton>
+        {!! Form::submit('Send', ['class' => 'letter', 'disabled' => 'disabled']) !!}
     </fieldset>
-
+    {!! Form::close() !!}
 </div>
 

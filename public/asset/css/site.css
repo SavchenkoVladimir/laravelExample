@@ -416,12 +416,6 @@ div#contactPage{
     p.addressDescr{
       display: inline-block;
     }
-      p.addressType,
-      p.addressDescr
-      {
-        margin: 2px 2px 2px 2px;
-      }
-
     iframe.address
     {
       width: 80%;
@@ -431,9 +425,9 @@ div#contactPage{
     }
     fieldset.letter
     {
-      width: 350px;
+      width: 400px;
       border: 0;
-      color: inherit;
+      /*color: inherit;*/
     }
       input[type='text'].letter, 
       textarea.letter
