@@ -55,35 +55,35 @@ return [
         'mysql' => [
             'driver'    => 'mysql',
             'host'      => env('DB_HOST', 'localhost'),
-            'database'  => env('DB_DATABASE', 'forge'),
-            'username'  => env('DB_USERNAME', 'forge'),
-            'password'  => env('DB_PASSWORD', ''),
+            'database'  => env('DB_DATABASE', 'sv_portfolio'),
+            'username'  => env('DB_USERNAME', 'daf'),
+            'password'  => env('DB_PASSWORD', 'daf'),
             'charset'   => 'utf8',
             'collation' => 'utf8_unicode_ci',
             'prefix'    => '',
             'strict'    => false,
         ],
 
-        'pgsql' => [
-            'driver'   => 'pgsql',
-            'host'     => env('DB_HOST', 'localhost'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset'  => 'utf8',
-            'prefix'   => '',
-            'schema'   => 'public',
-        ],
+//        'pgsql' => [
+//            'driver'   => 'pgsql',
+//            'host'     => env('DB_HOST', 'localhost'),
+//            'database' => env('DB_DATABASE', 'forge'),
+//            'username' => env('DB_USERNAME', 'forge'),
+//            'password' => env('DB_PASSWORD', ''),
+//            'charset'  => 'utf8',
+//            'prefix'   => '',
+//            'schema'   => 'public',
+//        ],
 
-        'sqlsrv' => [
-            'driver'   => 'sqlsrv',
-            'host'     => env('DB_HOST', 'localhost'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset'  => 'utf8',
-            'prefix'   => '',
-        ],
+//        'sqlsrv' => [
+//            'driver'   => 'sqlsrv',
+//            'host'     => env('DB_HOST', 'localhost'),
+//            'database' => env('DB_DATABASE', 'forge'),
+//            'username' => env('DB_USERNAME', 'forge'),
+//            'password' => env('DB_PASSWORD', ''),
+//            'charset'  => 'utf8',
+//            'prefix'   => '',
+//        ],
 
     ],
 
@@ -111,17 +111,17 @@ return [
     |
     */
 
-    'redis' => [
-
-        'cluster' => false,
-
-        'default' => [
-            'host'     => env('REDIS_HOST', 'localhost'),
-            'password' => env('REDIS_PASSWORD', null),
-            'port'     => env('REDIS_PORT', 6379),
-            'database' => 0,
-        ],
-
-    ],
+//    'redis' => [
+//
+//        'cluster' => false,
+//
+//        'default' => [
+//            'host'     => env('REDIS_HOST', 'localhost'),
+//            'password' => env('REDIS_PASSWORD', null),
+//            'port'     => env('REDIS_PORT', 6379),
+//            'database' => 0,
+//        ],
+//
+//    ],
 
 ];

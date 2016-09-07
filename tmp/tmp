@@ -1,0 +1,96 @@
+
+<!--
+        <div class='conteiner layout'>
+            <div class='col-xs-12 col-sm-12 col-md-12 col-lg-12'>
+                <div class="row header_parent">
+                    <header class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="layout_header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#responsiv-header">
+                            <i class="fa fa-bars fa-2x" aria-hidden="true"></i>                            
+                            <span class="sr-only">Open navigation</span>                     
+                        </button>
+                        <div class="collapse navbar-collapse" id="responsiv-header">
+                            <ul class="row">
+                                <li class="hidden-xs col-sm-3 col-md-5 col-lg-5">
+                                </li>
+                                <li class="li_summary_link col-xs-12 col-sm-4 col-md-3 col-lg-3">
+                                    <a class='nav'>Work examples</a>
+                                </li>                        
+                                <li class="li_home_link col-xs-12 col-sm-2 col-md-2 col-lg-2">
+                                    <a class='nav'>Summury</a>
+                                </li>
+                                <li class="li_contacts_link col-xs-12 col-sm-3 col-md-2 col-lg-2" id="li_contacts_link">
+                                    <a class='nav'>Contacts</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </header>
+                </div>
+                <div class="content" id="content">
+                    @yield('content')
+                </div>
+                <footer class="row">
+                    <div class="hidden-xs col-sm-1 col-md-2 col-lg-2"></div>
+                    <div class="copyright_container col-xs-8 col-sm-4 col-md-3 col-lg-4">
+                        <div class="copyright">&copy; Vladimir Savchenko</div>
+                        <div class="beginYear">2015</div>
+                        <div class="currentYear"></div>
+                    </div>
+                    <div class="hidden-xs col-sm-3 col-md-3 col-lg-3"></div>
+                    <div class="share_links_container col-xs-4 col-sm-3 col-md-3 col-lg-3">
+                        <a href="https://www.linkedin.com/shareArticle?url=http://savchenkoportfolio.com&mini=true"
+                           id="linkedin"><i class="fa fa-linkedin fa-2x share" aria-hidden="true"></i></a>
+                        <a href="http://www.facebook.com/sharer.php?s=link" id="facebook">
+                            <i class="fa fa-facebook fa-2x share" aria-hidden="true"></i></a>
+                        <a href="http://vkontakte.ru/share.php?url=link" id="vk">
+                            <i class="fa fa-vk fa-2x share" aria-hidden="true"></i>
+                        </a>                        
+                    </div>     
+                    <div></div>
+                </footer>
+            </div>
+        </div>
+        <div class='scripts'>
+            <script src="{{asset('asset/js/site.js')}}"></script>           
+            <script src="{{asset('asset/js/bootstrap.min.js')}}"></script>
+        </div>
+    </div>
+-->
+
+
+
+
+<div class='row' id='home_page'>
+    <div class="row">
+        <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+            {!! Html::link('https://github.com/SavchenkoVladimir/laravelExample',
+            'HTML5', ['id' => 'link_html'], null)!!} 
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            {!! Html::link('https://github.com/SavchenkoVladimir/laravelExample',
+            'JAVASCRIPT', ['id' => 'link_javascript'], null)!!}   
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6">
+            {!! Html::link('https://github.com/SavchenkoVladimir/laravelExample',
+            'CSS3', ['id' => 'link_css'], null)!!}   
+        </div>
+        <div class="col-xs-6">
+            {!! Html::link('https://github.com/SavchenkoVladimir/laravelExample',
+            'PHP', ['id' => 'link_php'], null)!!}   
+        </div>        
+    </div>
+    <div class="row">
+        <div class="col-xs-5">
+            {!! Html::link('https://github.com/SavchenkoVladimir/laravelExample',
+            'LARAVEL', ['id' => 'link_laravel'], null)!!}   
+        </div>
+        <div class="col-xs-6">
+            {!! Html::link('https://github.com/SavchenkoVladimir/laravelExample',
+            'MySQL', ['id' => 'link_mysql'], null)!!}   
+        </div>
+    </div>    
+</div>
+<div class='scripts'>  
+    <script src="{{asset('asset/js/home.js')}}"></script>            
+</div>-->

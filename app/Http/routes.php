@@ -11,6 +11,14 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'SiteController@showHome');
+
+Route::get('/home', 'SiteController@showHome');
+
+Route::get('/workExamples', 'SiteController@showWorkExamples');
+
+Route::get('/summury', 'SiteController@showSummary');
+
+Route::get('/contacts', 'SiteController@contacts');
+
+Route::post('/contacts', 'SiteController@contacts');

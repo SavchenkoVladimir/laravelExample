@@ -1,0 +1,492 @@
+/* 
+    This is the style of Portfolio project
+    Created on : Aug 7, 2016, 6:07:38 PM
+    Author     : Vladimir Savchenko
+*/
+
+
+@font-face{
+    font-family: ArbatDi;
+    src: url('../css/ArbatDi.ttf');
+}
+
+/*  The site layout style  */
+body{
+    display: none; 
+    width: 100%;
+    min-width: 417px;
+    color: rgb(80, 80, 80);  
+    font-family: Arial, Cambria;
+    overflow: auto;
+}
+#site_layout,    
+#responsiv-header,
+#responsiv-header > ul,
+#home_page,
+#home_page > .row,
+#site_layout_footer,
+#work_examples > .row,
+#summary > .row{
+    width: 100%;
+    margin: 0;
+    padding: 0;    
+}
+    #layout_header{           
+        padding: 0;
+        margin: 65px 0 0 0;
+        padding: 0;
+        background-color: rgba(170, 170, 170, 0.5);
+        min-height: 65px;
+        z-index: 100;
+    }
+        #layout_header > button.navbar-toggle{
+            height: 37px;
+            width: 37px;
+            border: 1px solid gray;
+            border-radius: 2px;
+            margin: 14px;
+            padding: 2px;
+        }
+            #layout_header > button.navbar-toggle:hover{
+                cursor: pointer;
+                background-color: rgba(170, 170, 170, 0.6);
+            }
+        #responsiv-header > ul{
+            height: 100%;
+        }        
+        #responsiv-header > ul > li{
+            list-style: none;
+            list-style-type: none;
+            padding: 0;
+        }
+        a.nav{
+            text-decoration: none;
+            width: 100%;
+            height: 65px;
+            display: inline-block;
+            font-weight: bolder;
+            font-size: 2em;
+            color: rgb(80, 80, 80);    
+            padding: 15px 0 0 0;
+            text-align: center;
+        }
+            a.nav:hover,
+            a.nav:hover:focus,
+            a.nav.close_btn:focus{        
+                background-color: rgba(170, 170, 170, 0.2);
+                color: rgb(255,102,0);
+                text-decoration: none;
+                outline-width: 0;                
+            }
+    #site_layout_footer{
+        background-color: rgba(170, 170, 170, 0.6); 
+        height: 65px;
+        font-family: ArbatDi;
+    }
+        .copyright_container{
+            padding: 0 0 0 20px !important;
+        }
+            .copyright,
+            .beginYear,
+            .currentYear{
+                display: inline-block;
+                margin: 25px 0 0 0;
+                font-weight: bolder;
+            }
+        .fa.fa-2x.share{
+            color: rgb(255, 255, 255);
+            margin: 18px 5px 0 0;
+        }
+        .fa.fa-2x.share:hover{
+            color: #3E4DA8;
+        }
+        
+/*--- The home page style --------------------------------------*/
+#home_page{
+    background-image: url(../../asset/img/site/earthWork.jpg);
+    background-repeat: no-repeat;
+    background-position: top;
+    overflow: auto;
+}
+    #sun{
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      position: absolute;
+      top: 5%;
+      left: 5%;
+      background-color: rgb(255, 102, 0);  
+      display: none;
+    }
+    #link_html{
+        font-size: 2em;
+        font-weight: bolder;
+        margin:90px 0 0 50%;
+    }
+    #link_javascript{
+        font-size: 1.5em;
+        font-weight: bolder;
+        margin: 120px 0 0 25%;
+    }
+    #link_css{
+        font-size: 1.9em;
+        font-weight: bold;
+        margin: 120px 0 0 25%;        
+    }
+    #link_php{
+        font-size: 1.7em;
+        font-weight: bold;         
+        margin: 90px 0 0 60%;
+    }
+    #link_laravel{
+        font-size: 1.4em;
+        font-weight: bold;
+        margin: 110px 0 0 25%;            
+    }
+    #link_mysql{
+        font-size: 1.6em;
+        font-weight: bold;
+        margin: 120px 0 0 60%;          
+    }
+    #link_ajax{
+        font-size: 1.8em;
+        font-weight: bolder;
+        margin: 130px 0 0 35%;           
+    }
+    #link_bootstrap{
+        font-size: 1.5em;
+        font-weight: bold;
+        margin: 100px 0 170px 45%;         
+    }
+    #link_html,
+    #link_javascript,
+    #link_css,
+    #link_php,
+    #link_laravel,
+    #link_mysql,
+    #link_yii,
+    #link_ajax,
+    #link_bootstrap{
+        display: inline-block;        
+        color: rgb(80, 80, 80);          
+    }
+        #link_html:hover,
+        #link_javascript:hover,
+        #link_css:hover,
+        #link_php:hover,
+        #link_laravel:hover,
+        #link_mysql:hover,
+        #link_yii:hover,
+        #link_ajax:hover,
+        #link_bootstrap:hover{
+            text-decoration: none;
+            color: rgb(110, 110, 110);
+            text-shadow: 1px 1px 1px rgb(139, 139, 139);         
+        }
+        .definition{
+            display: none;
+            position: absolute;
+            opacity: 0.75;
+        }
+        .innerImage{
+            width: 150px;
+            border-radius: 5px;
+            border: 1px solid rgb(210, 210, 210);
+        }
+        .pointerTop{      
+            border-top: 0 solid rgba(200, 200, 200, 1);
+            border-right: 10px solid rgba(200, 200, 200, 0);
+            border-bottom: 15px solid rgba(200, 200, 200, 1);
+            border-left: 3px solid rgba(200, 200, 200, 0);
+            width: 0;
+            height: 10px;
+            margin-left: 10px;
+        }
+        .pointerBottom{
+            border-top: 15px solid rgba(200, 200, 200, 1);
+            border-right: 3px solid rgba(200, 200, 200, 0);
+            border-bottom: 0 solid rgba(200, 200, 200, 1);
+            border-left: 10px solid rgba(200, 200, 200, 0);
+            width: 0;
+            height: 10px;
+            margin-left: 130px;
+        }
+
+/* Work examples page */
+#work_examples{
+    max-width: 1100px;
+    margin: auto;
+}
+    img.we_examples_img{
+        width: 250px;
+        height: 180px;
+        border-radius: 3px;
+        margin: 5px;
+    }
+    a.we{
+        color: rgba(80, 80, 80, 1); 
+    }
+    span.we_star{
+        font-size: 25px;
+        color: rgba(30, 170, 245, 0.9);
+        z-index: -1;
+    }
+    
+/* Summury page */    
+
+.sum.about,
+.sum.rule{
+    border: 1px solid gray;
+    border-radius: 5px;
+    padding: 5px;
+}
+.sum.about{
+    text-align: justify;
+    margin: 5px 0 5px 0;
+    overflow: auto;
+}
+    .sum.rule{
+        margin: 10px;
+    }
+    @media (min-width: 1170px){
+        sum.rule-group{
+            width: 100%;
+        }
+        .sum.rule{
+            width: 30%;
+            float: left;
+        }
+    }
+div.sum.tel,
+div.sum.email,
+div.sum.skype{
+    margin: 10px 0 10px 0;    
+}
+img.face{
+    margin: 0 0 5px 0;
+    border-radius: 5px;
+}
+    p.sum{
+        display: inline-block;
+    }
+        img.sum{
+            width: 30px;
+            height: 30px;
+        }
+        @media (min-width:600px){
+            img.face.sum{
+                width: 235px;
+                height: 300px;
+            }
+            hr.sum{
+                width: 235px;
+                margin: 10px 0 0 0;
+            } 
+        }
+        @media (max-width:599px){
+            img.face.sum{
+                width: 160px;
+                height: 200px;
+            }    
+        }
+        @media (max-width: 750px){
+            hr.sum{
+                display: none;
+            }
+        }
+        .sum.contacts{
+            margin-top: 30px;
+        }
+        .sum.download{
+            text-align: right;
+            margin: 3px 0 3px 0;
+            display: none;
+        }
+            img.sum.download{
+                width: 55px;
+                height: 55px;
+            }
+
+  /* The 404 page style */
+  section.e404{
+        overflow: auto;
+  	background: url(../../asset/img/site/brick.jpg);
+        color: rgb(255, 255, 255);
+  }
+    article.e404{
+	width: 750px;
+        min-height: 500px;
+	margin: auto;
+        padding: 0 0 20px 0;
+    }
+        div.overLine,
+	div.underLine{
+            width: 200px;
+            height: 5px;
+            background-color: rgb(255, 255, 255);
+            margin: auto;
+            margin-top: 35px;
+	}
+	p.caption404,
+	h1.e404{
+            font-size: 50px;
+            font-weight: bold;
+            text-align: center; 
+	}
+	div.underLine{
+            margin-top: 0;
+	}
+	h1.e404{
+            font-size: 70px;
+	}
+	p.large404,
+	p.middle404,
+	p.small404{
+            text-align: center;
+            font-weight: bold;
+	}
+            p.large404{
+	   	font-size: 35px;
+            }
+            p.middle404,
+            p.small404{
+	   	margin-top: 30px;
+	   	font-size: 30px;	   	
+            }
+            a.button404{
+	   	display: block;
+                margin: auto;
+                width: 170px; 
+                font-size: 25px;
+                font-weight: bolder;
+                text-align: center;
+                text-decoration: none;
+                color: rgb(255, 255, 255);
+                background-color: rgb(252, 89, 20);
+                border: 0;
+                border-radius: 8px;
+                padding: 5px 0 5px 0;
+            }
+	    a.button404:hover{
+		background-color: rgb(255, 81, 0);
+	 	color: rgb(255, 249, 135);
+            }           
+    @media (max-width:750px){
+        article.e404{
+            width: 100%;
+        }
+        p.caption404,
+        h1.e404{
+            font-size: 30px;
+            font-weight: bolder;
+            text-align: center; 
+        }
+        p.large404,
+        p.middle404,
+        p.small404{
+            font-size: 1em;
+        }
+        a.button404{
+            width: 140px; 
+            font-size: 17px;    
+        }
+    }
+/* The contacts page style */
+div#contactPage{
+    border-radius: 7px;
+    padding: 15px;
+    background-color: rgb(255, 255, 255);
+    font-weight: bolder;
+}
+    div.cont.btn{
+        width: 100%;
+    }
+    h4.address{
+        margin: 0 0 10px 40px;
+    }
+    #address > ul > li{
+        list-style: none;
+        list-style-type: none;        
+    }
+    p.addressType
+    {
+      display: inline-block;
+      width: 100px;
+    }
+    p.addressDescr{
+      display: inline-block;
+    }
+    iframe.address
+    {
+      width: 80%;
+      border: 0;
+      border-radius: 3px;
+      height: 200px;
+    }
+    fieldset.letter
+    {
+      width: 400px;
+      border: 0;
+      /*color: inherit;*/
+    }
+      input[type='text'].letter, 
+      textarea.letter
+      {
+        float: right;
+        width: 200px;
+        border: 1px solid rgb(199, 199, 199);
+        border-radius: 3px;        
+      }
+        input.letter:focus, 
+        textarea.letter:focus
+        {
+          background: rgb(247, 255, 252);
+          border-color: rgb(151, 244, 213);
+          outline-width: 0;
+        }
+      textarea.letter
+      {
+        height: 90px;
+      }
+      button.letter, 
+      button.cont
+      {
+        position: relative;
+        float: right;
+        width: 80px;
+        border: 1px solid rgb(200, 200, 200);
+        border-radius: 5px;
+        padding: 2px 13px 2px 13px;
+        font-weight: bolder;
+      }
+      button#close
+      {
+        background-color: rgb(255, 255, 255);
+      }
+        #close:hover
+        {
+          cursor: pointer;
+          background: rgb(245, 245, 245);
+        }
+      #resp, #warning
+      {
+        display: none;
+        position: fixed;
+        min-width: 350px;
+        min-height: 100px;
+        border: 2px solid rgb(199, 199, 199);
+        background-color: rgba(255, 255, 255, 0.9);
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+      }  
+        #warning > button
+        {
+          display: inherit;
+          margin: 15px 40px 15px 40px;
+          float: left; 
+        }
+          #warning > button:hover
+          {
+            cursor: pointer;            
+          }    
