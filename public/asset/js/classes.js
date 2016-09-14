@@ -255,3 +255,125 @@ glueElementBottom.prototype.glue = function () {
         }
     }
 };
+
+/*
+ * 
+ */
+function contactPageHandler(formDescr) {
+    this.form = $(formDescr);
+    this.submitButon = $(this.form).find('input[type="submit"]');
+    this.closeBtn;
+    this.warningDiv;
+    this.formValue;
+}
+contactPageHandler.prototype.closeBtnHandler = function (closeBtnDescr, warningDivDescr,
+        closeWarningDescr, confirmCloseBtnDescr) {
+    var self = this;
+    this.closeBtn = $(closeBtnDescr);
+    this.warningDiv = $(warningDivDescr);
+    this.closeWarningDivBtn = $(closeWarningDescr);
+    this.confirmCloseBtn = $(confirmCloseBtnDescr);
+
+    $(this.closeBtn).click(function (e) {
+        var formElementsValue = null;
+        $(self.form).find('input, textarea').each(function (index, value) {
+            if ($(value).attr('name') === '_token' || $(value).attr('type') === 'submit') {
+                return;
+            } else if ($(value).val()) {
+                formElementsValue = $(value).val();
+            }
+        });
+        if (formElementsValue !== null) {
+            $(self.warningDiv).css('display', 'block');
+            return false;
+        }
+    });
+
+    $(this.closeWarningDivBtn).click(function () {
+        $(self.warningDiv).fadeOut(500);
+    });
+
+    $(this.confirmCloseBtn).click(function () {
+        $('#myModal').modal('toggle');
+        $(self.warningDiv).css('display', '');
+    });
+};
+contactPageHandler.prototype.formValidate = function () {
+    var self = this;
+
+    $(this.form).keyup(function (e) {
+        self.formValidator(e.target);
+    });
+};
+contactPageHandler.prototype.formValidator = function (field) {
+    var self = this;
+    var attrName = $(field).attr('name');
+
+    switch (attrName) {
+        case ('email'):
+            var isValid = self.emailValidate($(field).val());
+            self.paintFofmElement(field, isValid);
+            return isValid;
+        case ('name'):
+            var isValid = self.notEmptyValidate($(field).val());
+            self.paintFofmElement(field, isValid);
+            return isValid;
+        case ('message'):
+            var isValid = self.notEmptyValidate($(field).val());
+            self.paintFofmElement(field, isValid);
+            return isValid;
+    }
+    return true;
+};
+contactPageHandler.prototype.emailValidate = function (emailValue) {
+    if (emailValue.match(/.+@.+\..+/i)) {
+        return true;
+    }
+    return false;
+};
+contactPageHandler.prototype.notEmptyValidate = function (elementValue) {
+    if (elementValue) {
+        return true;
+    }
+    return false;
+};
+contactPageHandler.prototype.paintFofmElement = function (formElement, verificationResult) {
+    if (verificationResult) {
+        $(formElement).removeClass('verif_failed').addClass('verif_passed');
+    } else {
+        $(formElement).removeClass('verif_passed').addClass('verif_failed');
+    }
+};
+contactPageHandler.prototype.sendLetter = function (action) {
+    var self = this;
+    var isValid = true;
+
+    $(this.submitButon).click(function (e) {
+        e.preventDefault();
+//        $.each(self.form[0], function (key, value) {
+//            if (!self.formValidator(value)) {
+//                return false;
+//            }
+//            isValid = true;
+//        });
+console.log($(self.form));
+        if (isValid) {
+            $.ajaxSetup({
+                type: 'POST',
+                url: action,
+                dataType: 'html',
+                data: {'message': JSON.stringify($(self.form))},
+                async: true,
+                timeout: 10000,
+            });
+            $.ajax({
+                success: function (data) {
+                    console.log(data);
+                },
+                error: function (e) {
+                    console.log(e);
+                }
+            });
+        }
+    });
+};

@@ -1,13 +1,14 @@
-
 <div id="contactPage">
     <div class="cont btn">
         <button id="close" class="cont" data-dismiss="modal" aria-hidden="true">Close</button>
     </div>
     <hr />
-    <div id="warning">
+    <div class="row">
+    <div id="warning" class="col-xs-11 col-sm-11 col-md-11 col-lg-11">
         <p>The page has an unsaved data.<br /><br />Do You really want to leave the page?</p>
-        <button class="letter">Yes</button>
-        <button class="letter">No</button>
+        <button class="letter warningBtn yes">Yes</button>
+        <button class="letter warningBtn no">No</button>
+    </div>
     </div>
     <div id="address">
         <h4 class="address">You can contact me by:</h4>
@@ -40,25 +41,25 @@
     <hr class="contacts" />
     <h4 class="address">You can send me a letter as well:</h4>
     <div id='resp'></div>
-    {!! Form::model($contactsForm, ['url' => '/contacts']) !!}
+    {!! Form::model($contactsForm, ['url' => '/contacts', 'name' => 'contacts']) !!}
     <fieldset class="letter">
-        <label for="name">Your name:
-            {!! Form::text('name', $contactsForm->name, ['class' => 'letter', 'maxlength' => '255']); !!}
-        </label>
+        {!! Form::label('name', 'Your name:'); !!}
+        {!! Form::text('name', $contactsForm->name, ['class' => 'letter', 'maxlength' => '255']); !!} 
     </fieldset>
     <fieldset class="letter">
-        <label>Your email:       
-            {!! Form::email('email', $contactsForm->email, ['class' => 'letter', 'maxlength' => '255']) !!}
-        </label>
+        {!! Form::label('email', 'Your email:'); !!}            
+        {!! Form::text('email', $contactsForm->email, ['class' => 'letter', 'maxlength' => '255']) !!}
+    </fieldset>
+    <fieldset class="letter">   
+        {!! Form::label('message', 'Your message:'); !!}            
+        {!! Form::textArea('message', $contactsForm->email, ['class' => 'letter', 'maxlength' => '510']) !!}    
     </fieldset>
     <fieldset class="letter">
-        <label>Your message:    
-            {!! Form::textArea('message', $contactsForm->email, ['class' => 'letter', 'maxlength' => '510']) !!}    
-        </label>
-    </fieldset>
-    <fieldset class="letter">
-        {!! Form::submit('Send', ['class' => 'letter', 'disabled' => 'disabled']) !!}
+        {!! Form::submit('Send', ['class' => 'letter']) !!}
     </fieldset>
     {!! Form::close() !!}
+    <div class='scripts'>
+        <script src="{{asset('asset/js/contacts.js')}}"></script>
+    </div>   
 </div>
 

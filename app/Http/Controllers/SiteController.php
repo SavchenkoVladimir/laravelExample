@@ -25,10 +25,9 @@ class SiteController extends BaseController {
         $this->setHomeLinkParameters(0);
         $this->setSummuryLinkParameters(1);
         $workExamples = WorkExamples::all();
-
         return view('site.workExamples', [
             'pageParameters' => $this->pageParameters,
-            'workExamples' => $workExamples
+            'workExamples' => $workExamples->toArray()
         ]);
     }
 
